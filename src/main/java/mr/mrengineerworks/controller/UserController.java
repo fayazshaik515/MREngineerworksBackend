@@ -23,15 +23,13 @@ public class UserController {
     @Autowired
     private EmailService emailService;
 
-    private static final Logger logger = LoggerFactory.getLogger(UserController.class); // Logger instance
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class); 
 
     @PostMapping("/SubmitDetails")
     public ResponseEntity<String> userDetailsForm(@RequestBody UserDetails userDetails) {
         try {
-            // Save the user details in the database
             UserDetails user = userDetailService.saveUser(userDetails);
 
-            // Prepare email content
             String subject = "New User Details Submitted";
             String body = "User Details:\n" +
                           "Name: " + user.getName() + "\n" +
@@ -40,14 +38,13 @@ public class UserController {
                           "Subject: " + user.getSubject() + "\n" +
                           "Message: " + user.getMessage();
 
-            // Send email to admin with user's details
-            String adminEmail = "admin@example.com"; // Use your actual admin email
+            String adminEmail = "admin@example.com"; 
             emailService.sendEmail(adminEmail, subject, body);
 
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body("Submitted Successfully");
         } catch (Exception e) {
-            logger.error("Error occurred while submitting user details: ", e); // Log the error
+            logger.error("Error occurred while submitting user details: ", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Failed to process request: " + e.getMessage());
         }
