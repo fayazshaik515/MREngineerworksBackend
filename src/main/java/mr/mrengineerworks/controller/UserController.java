@@ -3,7 +3,7 @@ package mr.mrengineerworks.controller;
 import mr.mrengineerworks.entity.UserDetails;
 import mr.mrengineerworks.service.EmailService;
 import mr.mrengineerworks.service.UserDetailService;
-import org.slf4j.Logger; // Import SLF4J for logging
+import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
