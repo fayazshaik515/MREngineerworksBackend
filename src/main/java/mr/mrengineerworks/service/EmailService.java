@@ -23,8 +23,7 @@ public class EmailService {
             helper.setFrom("princefayaz034@gmail.com"); 
             helper.setTo("princefayaz034@gmail.com"); 
             helper.setSubject(subject);
-            helper.setText(body, true); 
-            
+            helper.setText(body, true);             
             InternetAddress replyToAddress = new InternetAddress(userEmail);
             message.setReplyTo(new InternetAddress[]{replyToAddress}); 
 
