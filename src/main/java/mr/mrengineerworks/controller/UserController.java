@@ -14,7 +14,7 @@ import org.springframework.validation.annotation.Validated;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://localhost:3000")  
+@CrossOrigin(origins = "https://mrengineeringworks.netlify.app")  
 public class UserController {
 
     @Autowired
