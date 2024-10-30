@@ -20,8 +20,8 @@ public class EmailService {
         try {
 
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("princefayaz034@gmail.com"); 
-            helper.setTo("princefayaz034@gmail.com"); 
+            helper.setFrom("mrengineerworks5@gmail.com"); 
+            helper.setTo("mrengineerworks5@gmail.com"); 
             helper.setSubject(subject);
             helper.setText(body, true);             
             InternetAddress replyToAddress = new InternetAddress(userEmail);
